@@ -1,13 +1,13 @@
-document.getElementById('joinbtn').addEventListener('click', function(){
-    let firstname=document.getElementById('firstname').value
-    let lastname=document.getElementById('lastname').value
+document.getElementById('startbtn').addEventListener('click', function(){
+    document.getElementById('results').innerHTML = ``
 
-    if (firstname === '' || lastname === '') {
-        document.getElementById('results').innerHTML = 'please check input'
-    }else{
-        document.getElementById('results').innerHTML = `${firstname} ${lastname}`
+    let totallap = parseInt(document.getElementById('input').value)
+    let currentlap = 1;
 
+    while (currentlap <= totallap) {
+        document.getElementById('results').innerHTML += `<h1>lap${currentlap} is completed</h1>`
+        currentlap++;
+        
     }
-
-    
+    console.log('you won');
 })
