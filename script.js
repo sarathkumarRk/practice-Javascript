@@ -1,9 +1,19 @@
-let weathervalue = 'sarath';
+let postsElement = document.querySelector('#posts')
 
-if (weathervalue === 'israning'|| weathervalue === 'hot') {
-    document.getElementById('results').innerHTML = 'Take in umbralla'  
-}else if(weathervalue === 'sunny'){
-    document.getElementById('results').innerHTML = 'Take the cooling glass'
-}else{
-    document.getElementById('results').innerHTML = 'invalid item'
-}
+
+fetch('https://jsonplaceholder.typicode.com/posts').then((Response)=>{
+    return Response.json()
+
+}).then((data)=>{
+    data.forEach(item => {
+        postsElement.innerHTML += ` 
+
+        <div>
+        <h1>${item.id} - ${item.title}</h1>
+        <p>${item.body}</p>
+        </div>`
+        
+        
+    });
+
+})
