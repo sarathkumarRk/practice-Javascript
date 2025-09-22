@@ -1,13 +1,28 @@
-let fruits = ['Apple','orange','grapes','bhanana'];
-console.log(fruits);
+let fruits = ['apple', 'orange','grapes','bhanana']
 
-// fruits.forEach(function(item){
-//     document.getElementById('results').innerHTML += `<h1>${item}</h1>`
+
+// let filedfruits = fruits.filter((item)=>{
+//     return item.includes('r')
+
 // })
 
-fruits.forEach(item=>{
-    document.getElementById('results').innerHTML += `<h1>${item}</h1>`
+// filedfruits.forEach((item)=>{
+//     document.getElementById('results').innerHTML +=  `<h1>${item}</h1>`
+// }
+// )
 
-}
+document.getElementById('search').addEventListener('keyup', ()=>{
+    document.getElementById('results').innerHTML = ``
 
-)
+    let searchkey = document.getElementById('search').value
+
+    let filedfruits = fruits.filter(item=>{
+    return item.includes(searchkey)
+    })
+
+    filedfruits.forEach(item=>{
+    document.getElementById('results').innerHTML +=  `<h1>${item}</h1>`
+
+})
+})
+
