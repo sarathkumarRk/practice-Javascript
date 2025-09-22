@@ -1,19 +1,13 @@
-let postsElement = document.querySelector('#posts')
+let fruits = ['Apple','orange','grapes','bhanana'];
+console.log(fruits);
 
+// fruits.forEach(function(item){
+//     document.getElementById('results').innerHTML += `<h1>${item}</h1>`
+// })
 
-fetch('https://jsonplaceholder.typicode.com/posts').then((Response)=>{
-    return Response.json()
+fruits.forEach(item=>{
+    document.getElementById('results').innerHTML += `<h1>${item}</h1>`
 
-}).then((data)=>{
-    data.forEach(item => {
-        postsElement.innerHTML += ` 
+}
 
-        <div>
-        <h1>${item.id} - ${item.title}</h1>
-        <p>${item.body}</p>
-        </div>`
-        
-        
-    });
-
-})
+)
